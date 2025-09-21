@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Photographers Management</title>
+</head>
+<body>
+    <h1>Photographers List</h1>
+
+    <!-- Add Photographer Form -->
+    <form th:action="@{/addPhotographer}" th:object="${newPhotographer}" method="post">
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" placeholder="Enter name" required />
+
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" placeholder="Enter email" required />
+
+        <label>Status:</label>
+        <input type="text" th:field="*{status}" placeholder="Enter status" required />
+
+        <button type="submit">Add Photographer</button>
+    </form>
+
+    <hr/>
+
+    <!-- Photographer Table -->
+    <table border="1" cellpadding="8" cellspacing="0">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+        </tr>
+        <tr th:each="photographer : ${photographers}">
+            <td th:text="${photographer.id}">1</td>
+            <td th:text="${photographer.name}">John Doe</td>
+            <td th:text="${photographer.email}">john@example.com</td>
+            <td th:text="${photographer.status}">Active</td>
+        </tr>
+    </table>
+</body>
+</html>

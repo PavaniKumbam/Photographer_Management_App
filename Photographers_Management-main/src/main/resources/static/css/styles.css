@@ -1,0 +1,6 @@
+/* Subtle polish to match the screenshot vibe */
+.photographer-card { border-radius: 1rem; }
+.status-dot { width: .6rem; height: .6rem; display: inline-block; border-radius: 50%; }
+.status-dot.active { background: #28a745; }
+.status-dot.on_leave { background: #ffc107; }
+.status-dot.unavailable { background: #dc3545; }
